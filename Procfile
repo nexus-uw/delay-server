@@ -1,1 +1,1 @@
-web: deplay-server
+web: delay-server
