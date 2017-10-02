@@ -25,8 +25,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		failureChance = 0
 	}
 
-	if maxMs < 0 || maxMs > 60000 {
-		http.Error(w, "invalid 'maxMs' query param. must be >= 0 and <= 60000", http.StatusBadRequest)
+	if maxMs < 0 || maxMs > 30000 {
+		http.Error(w, "invalid 'maxMs' query param. must be >= 0 and <= 30000", http.StatusBadRequest)
 	}
 
 	if minMs < 0 {
