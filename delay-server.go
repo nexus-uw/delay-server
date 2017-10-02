@@ -45,8 +45,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "<h1>welcome to the go delay server</h1>"+
 			"<h2> supported query params</h2>"+
 			"<ul>"+
-			"<li>maxMs : max delay in milliseconds. defaults to 1</li>"+
-			"<li>minMs : min delay in milliseconds. defaults to 0</li>"+
+			"<li>max : max delay in milliseconds. defaults to 1</li>"+
+			"<li>min : min delay in milliseconds. defaults to 0</li>"+
 			"<li>failure : failure chance. defaults to 0 (off)</li>"+
 			"</ul>")
 	}
