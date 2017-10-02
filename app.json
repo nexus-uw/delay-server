@@ -2,6 +2,6 @@
   "name": "Go Delay Server",
   "description": "A crummy Go based server that allow requester to set random delay + error in response",
   "repository": "https://github.com/nexus-uw/delay-server",
-  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "logo": "http://www.1-888-no-union.com/images/175_gopher_confused_by_golf_ball_hg_clr.gif",
   "keywords": ["go", "golang", "delay"]
 }
