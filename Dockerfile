@@ -1,11 +1,6 @@
-FROM alpine:latest
-
-MAINTAINER Edward Muller <edward@heroku.com>
-
-WORKDIR "/opt"
-
-ADD .docker_build/delay-server /opt/bin/delay-server
-
-
-CMD ["/opt/bin/delay-server"]
-
+FROM golang:latest
+RUN mkdir /app
+ADD . /app/
+WORKDIR /app
+RUN go build -o delay-server .
+CMD ["/app/delay-server"]
