@@ -9,8 +9,20 @@ import (
 	"time"
 )
 
+func setupResponse(w *http.ResponseWriter, req *http.Request) {
+	(*w).Header().Set("Access-Control-Allow-Origin", "*")
+    (*w).Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
+    (*w).Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization")
+}
+
 func handler(w http.ResponseWriter, r *http.Request) {
-	maxMs, parseError := strconv.ParseInt(r.URL.Query().Get("max"), 0, 32)
+
+        setupResponse(&w, r)
+	if (*r).Method == "OPTIONS" {
+		return
+	}
+
+        maxMs, parseError := strconv.ParseInt(r.URL.Query().Get("max"), 0, 32)
 	if parseError != nil {
 		maxMs = 1
 	}
@@ -47,7 +59,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			"<ul>"+
 			"<li>max : max delay in milliseconds. defaults to 1</li>"+
 			"<li>min : min delay in milliseconds. defaults to 0</li>"+
-			"<li>failure : failure chance. defaults to 0 (off)</li>"+
+			"<li>failure : 1 in X failure chance. defaults to 0 (off)</li>"+
 			"</ul>")
 	}
 
