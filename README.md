@@ -7,6 +7,6 @@ super simple http server that will allow you 'mock' delays in HTTP requires (ie:
 
 ## running (only works on amd64 docker arch)
 ```
-docker run -p 3000:3000 nexusuw/delay:latest
+docker run -p 3000:3000 nexusuw/delay-server:latest
 ```
 then vist [localhost:3000](http://localhost:3000)
